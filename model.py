@@ -5,11 +5,14 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
 from imblearn.over_sampling import SMOTE
 import pickle
+import os
 
 # ------------------------- Read the dataset -------------------------
-data = pd.read_csv(
-    r'C:\Users\ACER\Desktop\diabetes_binary\dataset\DiaBD_A Diabetes Dataset for Enhanced Risk Analysis and Research in Bangladesh.csv'
-)
+
+base_path = os.getcwd()
+csv_path = os.path.join(base_path, "dataset", "DiaBD_A Diabetes Dataset for Enhanced Risk Analysis and Research in Bangladesh.csv")
+data = pd.read_csv(csv_path)
+
 
 # Clean the target column
 data['diabetic'] = data['diabetic'].str.strip()
