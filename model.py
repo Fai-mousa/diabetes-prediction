@@ -67,11 +67,11 @@ print("\nConfusion Matrix:\n", confusion_matrix(y_test, y_pred))
 print("\nClassification Report:\n", classification_report(y_test, y_pred))
 
 # ------------------------- Save the model, scaler, and columns -------------------------
-with open('rf_diabetes_model.pkl', 'wb') as f:
+with open('models/rf_diabetes_model.pkl', 'wb') as f:
     pickle.dump(best_model, f)
-with open('rf_scaler.pkl', 'wb') as f:
+with open('models/rf_scaler.pkl', 'wb') as f:
     pickle.dump(scaler, f)
-with open('rf_columns.pkl', 'wb') as f:
+with open('models/rf_columns.pkl', 'wb') as f:
     pickle.dump(columns, f)
 
 # ------------------------- Predict on new patient data -------------------------
